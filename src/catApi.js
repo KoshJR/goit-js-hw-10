@@ -3,7 +3,7 @@ axios.defaults.headers.common['x-api-key'] =
   'live_NildWIgGizqRwVbU1R15xJNStZnyNYAAnkf4KABlL7F16HzvbajtmgiCiEcW30dH';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-function errorCats() {
+function errorReq() {
   Notify.failure('Oops! Something went wrong! Try reloading the page!', {
     position: 'center-center',
     timeout: 5000,
@@ -25,7 +25,7 @@ const fetchBreeds = urlCat => {
       return res;
     })
     .catch(() => {
-      errorCats();
+      errorReq();
       loaderBox.style.display = 'none';
       selectBreed.style.display = 'none';
       boxCatInfo.style.display = 'none';
@@ -52,7 +52,7 @@ const fetchCatByBreed = event => {
       </div>`;
     })
     .catch(() => {
-      errorCats();
+      errorReq();
       boxCatInfo.style.display = 'none';
       loaderBox.style.display = 'none';
       selectBreed.style.display = 'none';
